@@ -9,9 +9,12 @@ config.set('COMPILER_VERSION', cxx.version())
 ## Platform information
 config.set('TARGET_SYS', target_machine.system())
 config.set('TARGET_ARCH', target_machine.cpu())
+config.set('TARGET_ENDIAN', 'endian_t::@0@'.format(target_machine.endian()))
 
 config.set('BUILD_SYS', build_machine.system())
 config.set('BUILD_ARCH', build_machine.cpu())
+config.set('BUILD_ENDIAN', 'endian_t::@0@'.format(build_machine.endian()))
+
 ## Misc
 config.set('BUGREPORT_URL', get_option('bugreport_url'))
 
