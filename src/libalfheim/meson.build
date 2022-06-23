@@ -44,10 +44,39 @@ config_header = configure_file(
 library_deps = [
 	zlib,
 ]
-library_hdrs = files([])
-library_srcs = files([])
+library_hdrs = files([
+	'aout.hh',
+	'coff.hh',
+	'ecoff.hh',
+	'elf.hh',
+	'macho.hh',
+	'os360.hh',
+	'pe32.hh',
+	'xcoff.hh',
+])
+
+library_srcs = files([
+	'aout.cc',
+	'coff.cc',
+	'ecoff.cc',
+	'elf.cc',
+	'macho.cc',
+	'os360.cc',
+	'pe32.cc',
+	'xcoff.cc',
+])
 
 subdir('internal')
+
+subdir('aout')
+subdir('coff')
+subdir('ecoff')
+subdir('elf')
+subdir('macho')
+subdir('os360')
+subdir('pe32')
+subdir('xcoff')
+
 
 libalfheim = library(
 	'libalfheim',
