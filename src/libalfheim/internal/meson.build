@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 library_hdrs_internal += files([
+	'defs.hh',
 	'utility.hh',
 ])
 
