@@ -32,6 +32,8 @@ namespace Alfheim::Config {
 	constexpr static auto target_arch{"@TARGET_ARCH@"sv};
 	[[maybe_unused]]
 	constexpr static auto target_endian{@TARGET_ENDIAN@};
+	[[maybe_unused]]
+	constexpr static auto target_width{@TARGET_WIDTH@};
 
 	[[maybe_unused]]
 	constexpr static auto build_system{"@BUILD_SYS@"sv};
@@ -39,6 +41,8 @@ namespace Alfheim::Config {
 	constexpr static auto build_arch{"@BUILD_ARCH@"sv};
 	[[maybe_unused]]
 	constexpr static auto build_endian{@BUILD_ENDIAN@};
+	[[maybe_unused]]
+	constexpr static auto build_width{@BUILD_WIDTH@};
 
 	/* Misc */
 	[[maybe_unused]]
