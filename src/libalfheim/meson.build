@@ -47,6 +47,8 @@ library_deps = [
 library_hdrs = files([])
 library_srcs = files([])
 
+subdir('internal')
+
 libalfheim = library(
 	'libalfheim',
 	library_srcs,
