@@ -29,14 +29,20 @@ namespace Alfheim::Internal {	namespace Units {
 
 	namespace Types {
 		#if defined(_WINDOWS)
+			using mode_t = std::int32_t;
+			using stat_t = struct ::_stat64;
 		#	if defined(_WIN64)
 			using ssize_t = __int64;
+			using off_t   = std::int64_t;
 		#	else
 			using ssize_t = int;
+			using off_t   = std::int32_t;
 		#	endif
 		#else
+		using stat_t  = struct stat;
+		using mode_t  = std::int32_t;
 		using ssize_t = typename std::make_signed<std::size_t>::type;
-		using off_t = std::int64_t;
+		using off_t   = std::int64_t;
 		#endif
 	}
 
