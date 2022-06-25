@@ -180,7 +180,7 @@ namespace Alfheim::Internal {
 
 			template<typename V>
 			[[nodiscard]]
-			static inline constexpr std::enable_if_t<std::is_enum_v<V> set(V& f, const V v) noexcept {
+			static inline constexpr std::enable_if_t<std::is_enum_v<V>> set(V& f, const V v) noexcept {
 				using Vt = typename std::underlying_type_t<V>;
 				using Vp = promoted_type_t<Vt>;
 
