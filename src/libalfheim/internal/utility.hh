@@ -4,12 +4,21 @@
 #if !defined(libalfheim_internal_utility_hh)
 #define libalfheim_internal_utility_hh
 
+#include <libalfheim/config.hh>
 #include <libalfheim/internal/defs.hh>
 
 #include <cstdint>
 #include <type_traits>
 #include <array>
 #include <vector>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#ifndef _MSC_VER
+#	include <unistd.h>
+#else
+#	include <io.h>
+#endif
 
 namespace Alfheim::Internal {	namespace Units {
 		/* IEC Units*/
@@ -39,7 +48,7 @@ namespace Alfheim::Internal {	namespace Units {
 			using off_t   = std::int32_t;
 		#	endif
 		#else
-		using stat_t  = struct stat;
+		using stat_t  = struct ::stat;
 		using mode_t  = std::int32_t;
 		using ssize_t = typename std::make_signed<std::size_t>::type;
 		using off_t   = std::int64_t;
