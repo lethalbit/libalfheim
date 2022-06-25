@@ -14,7 +14,7 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#ifndef _MSC_VER
+#if !defined(_MSC_VER)
 #	include <unistd.h>
 #else
 #	include <io.h>
