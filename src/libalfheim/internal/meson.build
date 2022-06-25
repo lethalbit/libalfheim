@@ -7,6 +7,7 @@ library_hdrs_internal = files([
 	'fd.hh',
 	'mmap.hh',
 	'utility.hh',
+	'zlib.hh',
 ])
 
 library_srcs += files([
