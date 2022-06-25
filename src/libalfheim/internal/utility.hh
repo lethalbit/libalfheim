@@ -104,6 +104,17 @@ namespace Alfheim::Internal {	namespace Units {
 
 	template<typename T>
 	using promoted_type_t = typename promoted_type<T>::type;
+
+	/* Helper methods */
+	[[nodiscard]]
+	inline constexpr bool is_be() noexcept {
+		return Alfheim::Config::target_endian == Alfheim::Config::endian_t::big;
+	}
+
+	[[nodiscard]]
+	inline constexpr bool is_le() noexcept {
+		return  Alfheim::Config::target_endian == Alfheim::Config::endian_t::little;
+	}
 }
 
 #endif /* libalfheim_internal_utility_hh */
