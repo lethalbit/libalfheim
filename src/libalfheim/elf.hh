@@ -4,5 +4,10 @@
 #if !defined(libalfheim_elf_hh)
 #define libalfheim_elf_hh
 
+#include <libalfheim/elf/types.hh>
+
+namespace Alfheim::ELF {
+
+}
 
 #endif /* libalfheim_elf_hh */

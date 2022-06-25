@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 library_hdrs_ecoff = files([
-
+	'types.hh',
 ])
 
 library_srcs += files([

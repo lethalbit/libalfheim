@@ -4,5 +4,10 @@
 #if !defined(libalfheim_coff_hh)
 #define libalfheim_coff_hh
 
+#include <libalfheim/coff/types.hh>
+
+namespace Alfheim::COFF {
+
+}
 
 #endif /* libalfheim_coff_hh */
