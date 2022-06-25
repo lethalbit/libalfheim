@@ -3,6 +3,8 @@
 library_hdrs_internal = files([
 	'bits.hh',
 	'defs.hh',
+	'fd.hh',
+	'mmap.hh',
 	'utility.hh',
 ])
 
