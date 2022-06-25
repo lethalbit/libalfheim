@@ -35,7 +35,7 @@ namespace Alfheim::Internal {
 	namespace {
 	#ifdef _WINDOWS
 		[[nodiscard]]
-		inline Types::ssize_t fdread(cosnt std::int32_t fd, void* const buff, const std::size_t, len) noexcept {
+		inline Types::ssize_t fdread(const std::int32_t fd, void* const buff, const std::size_t, len) noexcept {
 			return read(fd, buff, std::uint32_t(len));
 		}
 
