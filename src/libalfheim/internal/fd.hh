@@ -15,7 +15,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER)
 #	include <unistd.h>
 #else
 #	include <io.h>
@@ -26,14 +26,13 @@
 #include <libalfheim/internal/bits.hh>
 #include <libalfheim/internal/defs.hh>
 #include <libalfheim/internal/utility.hh>
-
-// #include <libalfheim/internal/mmap.hh>
+#include <libalfheim/internal/mmap.hh>
 
 namespace Alfheim::Internal {
 	namespace fs = std::filesystem;
 
 	namespace {
-	#ifdef _WINDOWS
+	#if defined(_WINDOWS)
 		[[nodiscard]]
 		inline Types::ssize_t fdread(const std::int32_t fd, void* const buff, const std::size_t, len) noexcept {
 			return read(fd, buff, std::uint32_t(len));
@@ -481,6 +480,23 @@ namespace Alfheim::Internal {
 					val
 				)
 			);
+		}
+
+		[[nodiscard]]
+		mmap_t map(const std::int32_t prot, const int flags) noexcept {
+			const auto len{length()};
+			if (len <= 0)
+				return {};
+			return map(prot, static_cast<std::size_t>(len), flags);
+		}
+
+		[[nodiscard]]
+		mmap_t map(const std::int32_t prot, const std::size_t len, const int flags, void* const addr = nullptr) noexcept {
+			if (!valid())
+				return {};
+			const std::int32_t file = _fd;
+			invalidate();
+			return {file, len, prot, flags, addr};
 		}
 	};
 
