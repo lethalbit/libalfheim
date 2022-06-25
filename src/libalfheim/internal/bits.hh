@@ -10,7 +10,7 @@
 #include <type_traits>
 #include <vector>
 
-namespace Fortress::Internal {
+namespace Alfheim::Internal {
 	/* LEB128 encoding and decoding */
 	template<typename T>
 	[[nodiscard]]
